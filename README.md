@@ -17,7 +17,7 @@ A detailed description of the algorithm, its underlying rationale, and experimen
 ### Step 1: Download the Code
 Download this repository as a ZIP file, or clone it using Git:
 ```bash
-git clone [https://github.com/WookyeomKim/RNA-Capture-Probe-Generator.git](https://github.com/WookyeomKim/RNA-Capture-Probe-Generator.git)
+git clone [https://github.com/WookyeomKim/RNA-Capture-Probe-Designer.git](https://github.com/WookyeomKim/RNA-Capture-Probe-Designer.git)
 cd RNA-Capture-Probe-Generator
 ```
 
@@ -55,7 +55,7 @@ python Capture_Probe_Finder.py
 
 ## 4. Output Data
 The tool generates an Excel file containing the ranked probes with the following key columns:
-- **Rank:** Overall performance ranking.
+- **Rank:** Ranked strictly based on **Coverage_Percent** (other metrics do not affect this ranking).
 - **Initial_Matches_(Mismatch):** Number of targets matched under the mismatch criteria.
 - **Captured_Targets_(DeltaG):** Number of targets captured under thermodynamic criteria.
 - **Coverage_Percent:** Percentage of input sequences captured.
