@@ -67,3 +67,23 @@ A detailed description of the algorithm and experimental validation will be prov
 
 ## 6. License
 This project is licensed under the MIT License.
+
+## 7. Appendix: Mismatch vs. Thermodynamic Stability Simulation (MATLAB)
+
+This repository also includes a supplementary MATLAB script (e.g., `Mismatch_Simulation.m`) designed to help you determine the optimal mismatch tolerance for your capture probes *before* running the main Python pipeline.
+
+### Why Use This Simulation?
+Screening massive genomic datasets with thermodynamic calculations can be computationally expensive. This simulation models the relationship between the number of base mismatches and the resulting thermodynamic binding stability (ΔG). 
+
+By setting your desired ΔG criteria (e.g., ΔG < -41 kcal/mol), the script calculates the exact probability of reaching that target binding strength for each mismatch count. This allows you to rationally set the `mismatch_tolerance` parameter in the Python tool. Filtering out highly mismatched sequences that have virtually no statistical chance of passing the thermodynamic criteria drastically improves the overall computational efficiency of the main algorithm.
+
+### Prerequisites
+To run this simulation, you need the following setup:
+* **MATLAB** installed on your system.
+* **NUPACK** compiled from its source code, with its MATLAB bindings added to your MATLAB path. (Please refer to the official [NUPACK User Guide](http://www.nupack.org/) for instructions on MATLAB integration).
+
+### Usage
+1. **Configuration:** Open the MATLAB script in your editor. Modify the `User parameters` section at the top. You can easily adjust the target threshold (`threshold_dG`), evaluation temperature (`eval_temp`), probe length (`L`), and GC content constraints.
+2. **Execution:** Run the script in MATLAB.
+3. **Output:** * A detailed statistical report in the command window, showing the probability of meeting your ΔG threshold per mismatch count.
+   * A high-resolution graph (saved as a PNG file) visualizing the Min-Max range and Mean ± SD of ΔG variations.
