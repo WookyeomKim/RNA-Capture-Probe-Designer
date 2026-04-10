@@ -70,7 +70,7 @@ This project is licensed under the MIT License.
 
 ## 7. Appendix: Mismatch vs. Thermodynamic Stability Simulation (MATLAB)
 
-This repository also includes a supplementary MATLAB script (e.g., `Mismatch_Simulation.m`) designed to help you determine the optimal mismatch tolerance for your capture probes *before* running the main Python pipeline.
+This repository also includes a supplementary MATLAB script (e.g., `Simulation_DG_variation_by_MM.m`) designed to help you determine the optimal mismatch tolerance for your capture probes *before* running the main Python pipeline.
 
 ### Why Use This Simulation?
 Screening massive genomic datasets with thermodynamic calculations can be computationally expensive. This simulation models the relationship between the number of base mismatches and the resulting thermodynamic binding stability (ΔG). 
@@ -80,7 +80,7 @@ By setting your desired ΔG criteria (e.g., ΔG < -41 kcal/mol), the script calc
 ### Prerequisites
 To run this simulation, you need the following setup:
 * **MATLAB** installed on your system.
-* **NUPACK** compiled from its source code, with its MATLAB bindings added to your MATLAB path. (Please refer to the official [NUPACK User Guide](http://www.nupack.org/) for instructions on MATLAB integration).
+* **NUPACK** compiled from its source code, with its MATLAB bindings added to your MATLAB path.
 
 ### Usage
 1. **Configuration:** Open the MATLAB script in your editor. Modify the `User parameters` section at the top. You can easily adjust the target threshold (`threshold_dG`), evaluation temperature (`eval_temp`), probe length (`L`), and GC content constraints.
